@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+@source "./src/**/*.{js,jsx,ts,tsx}";
+
+/* Nasconde il cursore nativo */
+html, body, a, button {
+  cursor: none !important;
+}
+
+/* Ripristina il cursore per gli elementi cliccabili per accessibilità (opzionale, ma consigliato) */
+a, button, [role="button"] {
+  cursor: none;
+}

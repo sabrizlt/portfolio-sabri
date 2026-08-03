@@ -6,7 +6,8 @@ import GeoCard from "./components/GeoCard";
 import CustomCursor from "./components/CustomCursor";
 import ScrollReveal from "./components/ScrollReveal";
 import Technologie from "./components/Technologie";
-
+import { PDFDownloadLink } from "@react-pdf/renderer";
+import CVDocument from "./components/CVDocument";
 
 export default function App() {
   useEffect(() => {
@@ -24,12 +25,9 @@ export default function App() {
     );
   }, []);
 
-
-
   return (
     <div className="relative min-h-screen bg-black text-neutral-100 font-sans antialiased selection:bg-emerald-500 selection:text-black overflow-x-hidden">
       {/* SFONDO DINAMICO: blob che derivano lentamente + grana + scia particelle */}
-
 
       <div className="bg-aurora">
         <span />
@@ -44,62 +42,94 @@ export default function App() {
       {/* NAVBAR COMPONENTE SEPARATO */}
       <Navbar />
 
-        <div className="
+      <div
+        className="
 fixed
 right-0
 bottom-0
 w-[400px]
 h-[500px]
-">
-
-</div>
+"
+      ></div>
 
       {/* CONTENITORE PRINCIPALE */}
       <main className="relative z-10 max-w-6xl mx-auto px-6 py-24 space-y-40">
         {/* HERO SECTION */}
-<section className="min-h-[50vh] flex flex-col justify-center space-y-6">
-  <ScrollReveal direction="down" once>
-    <div className="inline-flex items-center gap-2 px-3 py-1 bg-neutral-950 border border-neutral-900 w-fit">
-      <span className="w-1.5 h-1.5 bg-emerald-500 animate-pulse"></span>
-      <span className="text-xs font-mono text-neutral-400 uppercase tracking-widest">
-        System Ready // Available
-      </span>
-    </div>
-  </ScrollReveal>
+        <section className="min-h-[50vh] flex flex-col justify-center space-y-6">
+          <ScrollReveal direction="down" once>
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-neutral-950 border border-neutral-900 w-fit">
+              <span className="w-1.5 h-1.5 bg-emerald-500 animate-pulse"></span>
+              <span className="text-xs font-mono text-neutral-400 uppercase tracking-widest">
+                System Ready // Available
+              </span>
+            </div>
+          </ScrollReveal>
 
-  <ScrollReveal delay={100} once>
-    <h1 className="text-5xl md:text-7xl font-light tracking-tight leading-[1.1] font-mono text-white">
-      Creo esperienze <br />
-      <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-neutral-100 via-neutral-400 to-neutral-600">
-        web, mobile e digitali.
-      </span>
-    </h1>
-  </ScrollReveal>
+          <ScrollReveal delay={100} once>
+            <h1 className="text-5xl md:text-7xl font-light tracking-tight leading-[1.1] font-mono text-white">
+              Creo esperienze <br />
+              <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-neutral-100 via-neutral-400 to-neutral-600">
+                web, mobile e digitali.
+              </span>
+            </h1>
+          </ScrollReveal>
 
-  <ScrollReveal delay={200} once>
-    <p className="text-neutral-400 text-base md:text-lg max-w-2xl leading-relaxed font-sans">
-      Full-Stack Developer appassionato di tecnologia e sviluppo digitale.
-      Mi piace trasformare idee in progetti concreti, creando applicazioni web
-      e mobile curate nei dettagli, funzionali e semplici da utilizzare.
-    </p>
-  </ScrollReveal>
-</section>
+          <ScrollReveal delay={200} once>
+            <p className="text-neutral-400 text-base md:text-lg max-w-2xl leading-relaxed font-sans">
+              Full-Stack Developer appassionato di tecnologia e sviluppo
+              digitale. Mi piace trasformare idee in progetti concreti, creando
+              applicazioni web e mobile curate nei dettagli, funzionali e
+              semplici da utilizzare.
+            </p>
+          </ScrollReveal>
 
-{/* PROGETTI SECTION */}
-<section id="progetti" className="space-y-12">
-  <ScrollReveal>
-    <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-neutral-900 pb-6">
-      <div>
-        <h2 className="text-2xl font-mono uppercase tracking-wider text-white">
-          I miei progetti
-        </h2>
-        <p className="text-neutral-500 text-sm mt-1">
-          Idee, esperimenti e progetti nati dalla voglia di creare.
-        </p>
-      </div>
-    </div>
-  </ScrollReveal>
+          <ScrollReveal delay={300} once>
+            <PDFDownloadLink
+              document={<CVDocument />}
+              fileName="CV-Sabri-Zaltni.pdf"
+              className="
+    inline-flex
+    items-center
+    justify-center
+    px-6
+    py-3
+    bg-white
+    text-black
+    border
+    border-white
+    text-sm
+    font-mono
+    font-medium
+    tracking-wide
+    uppercase
+    transition-all
+    duration-300
+    hover:bg-neutral-200
+    hover:border-neutral-200
+    no-underline
+  "
+            >
+              {({ loading }) =>
+                loading ? "Generazione CV..." : "Scarica il mio CV"
+              }
+            </PDFDownloadLink>{" "}
+          </ScrollReveal>
+        </section>
 
+        {/* PROGETTI SECTION */}
+        <section id="progetti" className="space-y-12">
+          <ScrollReveal>
+            <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-neutral-900 pb-6">
+              <div>
+                <h2 className="text-2xl font-mono uppercase tracking-wider text-white">
+                  I miei progetti
+                </h2>
+                <p className="text-neutral-500 text-sm mt-1">
+                  Idee, esperimenti e progetti nati dalla voglia di creare.
+                </p>
+              </div>
+            </div>
+          </ScrollReveal>
 
           <ProjectGrid />
         </section>
@@ -120,22 +150,20 @@ h-[500px]
           <AboutSection />
         </section>
 
+        <section id="technologie" className="space-y-12">
+          <ScrollReveal>
+            <div className="border-t border-neutral-900 pt-16">
+              <h2 className="text-2xl font-mono uppercase tracking-wider text-white">
+                Technologies // Tools
+              </h2>
+              <p className="text-neutral-500 text-sm mt-1">
+                Gli strumenti e le tecnologie con cui mi piace lavorare.
+              </p>
+            </div>
+          </ScrollReveal>
 
-<section id="technologie" className="space-y-12">
-  <ScrollReveal>
-    <div className="border-t border-neutral-900 pt-16">
-      <h2 className="text-2xl font-mono uppercase tracking-wider text-white">
-        Technologies // Tools
-      </h2>
-      <p className="text-neutral-500 text-sm mt-1">
-        Gli strumenti e le tecnologie con cui mi piace lavorare.
-      </p>
-    </div>
-  </ScrollReveal>
-
-  <Technologie />
-</section>
-       
+          <Technologie />
+        </section>
 
         {/* CONTATTI & GEOLOCALIZZAZIONE */}
         <section id="contatti" className="space-y-12">
@@ -189,7 +217,11 @@ h-[500px]
               </div>
             </ScrollReveal>
 
-            <ScrollReveal direction="right" delay={120} className="md:col-span-1">
+            <ScrollReveal
+              direction="right"
+              delay={120}
+              className="md:col-span-1"
+            >
               <GeoCard />
             </ScrollReveal>
           </div>

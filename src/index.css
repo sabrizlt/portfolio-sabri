@@ -16,6 +16,14 @@ html {
   scroll-behavior: smooth;
 }
 
+section{
+  margin-bottom: 100px !important;
+}
+
+main{
+  padding-bottom: 0px !important;
+}
+
 /* ---------- Sfondo dinamico ---------- */
 
 /* Blob di luce che deriva lentamente: rompe il nero piatto senza rubare

@@ -2,25 +2,67 @@ import React, { useEffect, useRef } from 'react';
 
 export default function CustomCursor() {
   const cursorRef = useRef(null);
+  const mousePosition = useRef({ x: 0, y: 0 });
+  const animationFrame = useRef(null);
 
   useEffect(() => {
+    // Disattiva completamente il cursore sui dispositivi touch/mobile
+    if (window.matchMedia('(hover: none), (pointer: coarse)').matches) {
+      return;
+    }
+
     const moveCursor = (e) => {
-      if (cursorRef.current) {
-        // Allineamento perfetto sulla punta della freccia
-        cursorRef.current.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0)`;
+      mousePosition.current = {
+        x: e.clientX,
+        y: e.clientY,
+      };
+
+      if (!animationFrame.current) {
+        animationFrame.current = requestAnimationFrame(() => {
+          if (cursorRef.current) {
+            cursorRef.current.style.transform = `translate3d(
+              ${mousePosition.current.x}px,
+              ${mousePosition.current.y}px,
+              0
+            )`;
+          }
+
+          animationFrame.current = null;
+        });
       }
     };
 
     window.addEventListener('mousemove', moveCursor);
-    return () => window.removeEventListener('mousemove', moveCursor);
+
+    return () => {
+      window.removeEventListener('mousemove', moveCursor);
+
+      if (animationFrame.current) {
+        cancelAnimationFrame(animationFrame.current);
+      }
+    };
   }, []);
+
+  // Non renderizzare il cursore su mobile/touch
+  if (
+    typeof window !== 'undefined' &&
+    window.matchMedia('(hover: none), (pointer: coarse)').matches
+  ) {
+    return null;
+  }
 
   return (
     <div
       ref={cursorRef}
-      className="fixed top-0 left-0 z-[9999] pointer-events-none will-change-transform drop-shadow-[0_2px_10px_rgba(16,185,129,0.3)]"
+      className="fixed top-0 left-0 z-[9999] pointer-events-none"
+      style={{
+        margin: 0,
+        padding: 0,
+        filter: 'none',
+        boxShadow: 'none',
+        willChange: 'transform',
+      }}
     >
-      {/* Freccia classica pulita, ingrandita e senza linee sotto */}
       <svg
         width="32"
         height="32"

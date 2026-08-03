@@ -4,7 +4,6 @@ import ProjectGrid from "./components/ProjectGrid";
 import AboutSection from "./components/AboutSection";
 import GeoCard from "./components/GeoCard";
 import CustomCursor from "./components/CustomCursor";
-import TinkeringCanvas from "./components/TinkeringCanvas";
 import ScrollReveal from "./components/ScrollReveal";
 
 
@@ -37,7 +36,6 @@ export default function App() {
         <span />
       </div>
       <div className="bg-grain" />
-      <TinkeringCanvas />
 
       {/* CURSORE PERSONALIZZATO */}
       <CustomCursor />

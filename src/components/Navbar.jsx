@@ -37,7 +37,7 @@ export default function Navbar() {
       <div className="flex items-center gap-4">
         {/* GITHUB */}
         <a 
-          href="https://github.com" 
+          href="https://github.com/sabrizlt" 
           target="_blank" 
           rel="noopener noreferrer"
           className="text-neutral-500 hover:text-emerald-400 transition-colors hover:-translate-y-0.5 duration-200"
@@ -51,7 +51,7 @@ export default function Navbar() {
 
         {/* LINKEDIN */}
         <a 
-          href="https://linkedin.com" 
+          href="https://www.linkedin.com/in/sabri-zaltni-704310270/" 
           target="_blank" 
           rel="noopener noreferrer"
           className="text-neutral-500 hover:text-emerald-400 transition-colors hover:-translate-y-0.5 duration-200"
@@ -66,7 +66,7 @@ export default function Navbar() {
 
         {/* INSTAGRAM */}
         <a 
-          href="https://instagram.com" 
+          href="https://www.instagram.com/sabri.zlt/" 
           target="_blank" 
           rel="noopener noreferrer"
           className="text-neutral-500 hover:text-emerald-400 transition-colors hover:-translate-y-0.5 duration-200"
@@ -81,7 +81,7 @@ export default function Navbar() {
 
         {/* FACEBOOK */}
         <a 
-          href="https://facebook.com" 
+          href="https://www.facebook.com/sabri.zaltini/?locale=it_IT" 
           target="_blank" 
           rel="noopener noreferrer"
           className="text-neutral-500 hover:text-emerald-400 transition-colors hover:-translate-y-0.5 duration-200"

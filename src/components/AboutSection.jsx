@@ -1,37 +1,36 @@
-import React from 'react';
-import ScrollReveal from './ScrollReveal';
+import React from "react";
+import ScrollReveal from "./ScrollReveal";
 
 const timeline = [
   {
     dot: "bg-emerald-500",
-    date: "NOV 2023 - PRESENTE",
+    date: "NOV 2023 - OGGI",
     dateClass: "text-white",
     role: "Technoparts S.r.l.",
     roleClass: "text-neutral-300",
-    detail: "Full-Stack Developer (Internal Apps)",
+    detail: "Il mio percorso professionale nel mondo dello sviluppo",
   },
   {
     dot: "bg-neutral-800",
-    date: "2022 - 2023",
+    date: "2024 - OGGI",
     dateClass: "text-neutral-400",
-    role: "Independent Dev & Production",
+    role: "Progetti personali",
     roleClass: "text-neutral-400",
-    detail: "Sviluppo Web, E-Commerce & Web Apps",
+    detail: "Idee, esperimenti e progetti sviluppati nel tempo",
   },
   {
     dot: "bg-neutral-900",
-    date: "FORMAZIONE CORE",
+    date: "2022 - 2023",
     dateClass: "text-neutral-500",
-    role: "Epicode Bootcamp",
+    role: "Epicode",
     roleClass: "text-neutral-500",
-    detail: "Specializzazione Full-Stack",
+    detail: "L'inizio del mio percorso nello sviluppo software",
   },
 ];
 
 export default function AboutSection() {
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-
       {/* CARD 1: LA TUA FILOSOFIA & ESPERIENZA */}
       <ScrollReveal direction="left" className="md:col-span-2">
         <div className="p-8 bg-black border border-neutral-900 hover:border-neutral-800 transition-colors duration-500 flex flex-col justify-between h-full">
@@ -39,16 +38,28 @@ export default function AboutSection() {
             <span className="text-xs font-mono text-emerald-400 bg-neutral-950 px-3 py-1 border border-neutral-900 uppercase tracking-wider block w-fit mb-6">
               // PROFILE_LOG
             </span>
-            <h3 className="text-2xl font-mono font-bold text-white mb-4">Full-Stack Dev dal 2022</h3>
+            <h3 className="text-2xl font-mono font-bold text-white mb-4">
+              Full-Stack Dev dal 2022
+            </h3>
             <p className="text-neutral-400 text-sm leading-relaxed space-y-4 font-sans">
-              Scrivo codice con un approccio pragmatico orientato alla risoluzione di problemi reali.
-              Dal 2022 mi occupo di sviluppo software a 360°, traducendo logiche di business complesse in architetture backend pulite e interfacce utente fluide.
-              <br /><br />
-              Attualmente impegnato nello sviluppo e nell'ottimizzazione di applicativi interni aziendali presso <strong>Technoparts S.r.l.</strong>, mi piace sporcarmi le mani sia con la gestione di database relazionali complessi sia con le sfide tecniche del mobile, delle integrazioni API e dei flussi dati in tempo reale.
+              Mi occupo di sviluppo software e mi piace trasformare idee e
+              necessità in soluzioni semplici, funzionali e curate nei dettagli.
+              Dal 2022 lavoro nel mondo dello sviluppo, esplorando diversi
+              aspetti della tecnologia e imparando ogni giorno qualcosa di
+              nuovo.
+              <br />
+              <br />
+              Attualmente lavoro presso <strong>Technoparts S.r.l.</strong>,
+              dove mi occupo dello sviluppo e dell'ottimizzazione di applicativi
+              interni aziendali. Nel mio percorso ho avuto modo di lavorare con
+              applicazioni web e mobile, database, API e sistemi che richiedono
+              una gestione attenta dei dati. Mi piace sperimentare, affrontare
+              nuove sfide e trovare il modo migliore per trasformare un'idea in
+              qualcosa di concreto.
             </p>
           </div>
           <div className="text-xs font-mono text-neutral-600 mt-6">
-            STATUS: PRODUCTION_ACTIVE // INFRASTRUCTURE_MANAGEMENT
+            STATUS: PRODUCTION_ACTIVE // ALWAYS_LEARNING
           </div>
         </div>
       </ScrollReveal>
@@ -70,10 +81,16 @@ export default function AboutSection() {
                   direction="up"
                   className="relative"
                 >
-                  <span className={`absolute -left-[21px] top-1 w-2 h-2 rounded-full ${item.dot}`}></span>
-                  <span className={`block font-bold ${item.dateClass}`}>{item.date}</span>
+                  <span
+                    className={`absolute -left-[21px] top-1 w-2 h-2 rounded-full ${item.dot}`}
+                  ></span>
+                  <span className={`block font-bold ${item.dateClass}`}>
+                    {item.date}
+                  </span>
                   <span className={item.roleClass}>{item.role}</span>
-                  <span className="text-neutral-500 block text-[11px]">{item.detail}</span>
+                  <span className="text-neutral-500 block text-[11px]">
+                    {item.detail}
+                  </span>
                 </ScrollReveal>
               ))}
             </div>
@@ -81,16 +98,30 @@ export default function AboutSection() {
 
           {/* INTERESSI COLLATERALI */}
           <div className="border-t border-neutral-900 pt-4 mt-6">
-            <span className="text-[10px] font-mono text-neutral-500 block uppercase tracking-widest mb-2">Side Interests</span>
+            <span className="text-[10px] font-mono text-neutral-500 block uppercase tracking-widest mb-2">
+              Oltre il codice
+            </span>
+
             <div className="flex flex-wrap gap-1.5 text-[11px] font-mono">
-              <span className="px-2 py-0.5 bg-neutral-950 border border-neutral-900 text-neutral-400 hover:border-emerald-500/40 hover:text-emerald-400 transition-colors">Hardware Tinkering</span>
-              <span className="px-2 py-0.5 bg-neutral-950 border border-neutral-900 text-neutral-400 hover:border-emerald-500/40 hover:text-emerald-400 transition-colors">Computer Vision</span>
-              <span className="px-2 py-0.5 bg-neutral-950 border border-neutral-900 text-neutral-400 hover:border-emerald-500/40 hover:text-emerald-400 transition-colors">UI/UX Design</span>
+              <span className="px-2 py-0.5 bg-neutral-950 border border-neutral-900 text-neutral-400 hover:border-emerald-500/40 hover:text-emerald-400 transition-colors">
+                Curiosità
+              </span>
+
+              <span className="px-2 py-0.5 bg-neutral-950 border border-neutral-900 text-neutral-400 hover:border-emerald-500/40 hover:text-emerald-400 transition-colors">
+                Tecnologia
+              </span>
+
+              <span className="px-2 py-0.5 bg-neutral-950 border border-neutral-900 text-neutral-400 hover:border-emerald-500/40 hover:text-emerald-400 transition-colors">
+                Creatività
+              </span>
+
+              <span className="px-2 py-0.5 bg-neutral-950 border border-neutral-900 text-neutral-400 hover:border-emerald-500/40 hover:text-emerald-400 transition-colors">
+                Nuove idee
+              </span>
             </div>
           </div>
         </div>
       </ScrollReveal>
-
     </div>
   );
 }
